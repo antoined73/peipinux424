@@ -1,0 +1,10 @@
+﻿GUIDE – Gestion arguments d'une ligne de commande
+
+
+Lors de l’exécution d'une classe java dans un terminal, on peut faire suivre des arguments qui seront pris en compte dans la méthode main.
+
+Exemple : java -cp . NomDeClasse arg1 arg2 arg3 etc.
+
+Les arguments agr1,etc. Peuvent être de n'importe quelle nature.
+
+

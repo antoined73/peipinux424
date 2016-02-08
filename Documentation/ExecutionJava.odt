@@ -1,0 +1,41 @@
+﻿GUIDE – Execution de code JAVA
+
+
+
+Description de la commande Javac :
+
+La commande javac sert à compiler des sources Java.
+
+Son option -sourcepath précise le répertoire de base qui contient les sources dont la documentation est à générer.
+
+
+Description de la commande Java :
+
+La commande java exécute une application dans la Machine Virtuelle Java.
+
+Et son option -classpath (-cp) permet de spécifier à la machine virtuelle Java les emplacements à partir desquels la classe doit être recherché.
+
+
+Compiler un programme :
+
+$javac -sourcepath Sources -d bin  sources/pixel/NomDuFichier.java
+
+Executer un programme :
+
+$java -classpath bin pixel.NomDuFicher
+
+
+Politique de nommage des fichiers .java :
+
+Le nom du fichier.java doit avoir le même nom que la classe.
+De plus il faut respecter ces règles :
+
+La 1ère lettre en majuscule.
+1. Mélange de minuscule, majuscule avec la première lettre de chaque mot en majuscule 
+2. Donner des noms simples et descriptifs 
+3. Eviter les acronymes : hormis ceux commum (XML, URL, HTML, ...) 
+De plus, d'une manière générale : 
+N'utiliser que les lettres [a-z] et [A-Z] et [0-9] : Ne pas utiliser de tiret '-', d'underscore '_', ou d'autres caractères ($, *, accents, ...). 
+
+
+

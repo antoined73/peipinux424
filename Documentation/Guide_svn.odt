@@ -1,0 +1,56 @@
+﻿GUIDE – Utilisation du SVN
+
+Description des commandes :
+
+checkout (co):
+Permet de créer le dossier et de synchroniser une 1ere fois le depôt svn.
+
+info :
+Permet d'avoir des informations concernant un fichier passé en argument.
+
+update (up):
+Synchronise le dossier local depuis le dossier svn
+
+commit (ci):
+Envoi les changements effectués sur notre dossier local au dossier svn
+TOUJOURS envoyer un commentaire avec le commit pour savoir quelles modifications ont été effectuées. 
+→ $svn commit -m « commentaire à écrire »
+
+add : 
+Ajoute le fichier suivant dans le package à commit.
+
+Qu'est ce qu'un conflit ?
+Un conflit est une impossibilité de pouvoir synchroniser le dossier local depuis le dossier svn. Cela se produit lorsque celui qui commit n'est pas à jour car un autre utilisateur à effectué un changement sur les mêmes lignes de code.
+
+Exemple de conflit :
+Envoi          test.java
+svn: Échec de la propagation (commit), détails : 
+svn: Fichier ou répertoire 'test.java' obsolète ; mettre à jour
+svn: resource out of date; try updating
+
+Comment le résoudre ?
+
+1) svn up : Il faut update le fichier
+Affiche ceci par ex : 
+Conflit découvert dans 'test.java'.
+Sélectionner : (p) report, (df) diff entier, (e) édite,
+        (mc) mes conflits, (tc) autres conflits,
+        (s) affiche toutes les options
+
+2) p : Pour report le conflit
+Affiche ceci :
+C    test.java
+Actualisé à la révision 3.
+Résumé des conflits :
+  Conflits textuels : 1
+
+3) Modifier le fichier.java en question (et le sauvegarder Ctrl S): Dans notre exemple c'est test.java qui est modifié
+On voit dans le dossier les fichiers : 
+branches	tags	   test.java.mine  test.java.r3
+readme.textile	test.java  test.java.r2    trunk
+
+C'est test.java qui doit être résolut. Test.java.mine est le fichier que j'ai crée avant le commit. Test.java.r3/r2.. sont les fichiers des autres versions du dépôt.
+
+4)  svn resolved : Utiliser cette commande suivie du nom de fichier modifié.
+Dans notre exemple : svn resolved test.java
+Affiche enfin : Conflit sur 'test.java' résolu
